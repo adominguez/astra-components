@@ -1,5 +1,10 @@
 {
-  "name": "@ds/core-astro",
-  "version": "0.0.1",
-  "type": "module"
+  "name": "@astra/core-astro",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src", 
+  "files": ["src"],
+  "peerDependencies": {
+    "@astra/core-react": "^0.1.0"
+  }
 }

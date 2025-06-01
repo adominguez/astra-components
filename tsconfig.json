@@ -5,8 +5,8 @@
     "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {
-      "@ds/core-react/*": ["packages/core-react/src/*"],
-      "@ds/core-astro/*": ["packages/core-astro/src/*"]
+      "@astra/core-react/*": ["packages/core-react/src/*"],
+      "@astra/core-astro/*": ["packages/core-astro/src/*"]
     },
     "jsx": "react-jsx",
     "strict": true,
