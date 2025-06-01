@@ -2,7 +2,7 @@
 
 Este repositorio contiene una base para crear un sistema de diseño moderno y reutilizable usando:
 
-- 🧩 **React** → Componentes reutilizables (`"@astra/core-react`)
+- 🧩 **React** → Componentes reutilizables (`@astrahub/core-react`)
 - 🌌 **Astro** → Sitio de demostración con integración de React (`astra-components`)
 - 🎨 **Tailwind CSS** → Utilidades de estilo personalizadas
 - 🚀 **Turborepo** + `pnpm` Workspaces → Gestión de monorepo eficiente
@@ -76,7 +76,7 @@ export function Button({ variant, ...props }) {
 
 ```astro
 ---
-import { Button } from '@astra/core-react/components/Button';
+import { Button } from '@astrahub/core-react/components/Button';
 ---
 <Button client:only="react">Botón desde React</Button>
 ```

@@ -40,7 +40,11 @@ importers:
         specifier: 3.4.1
         version: 3.4.1
 
-  packages/core-astro: {}
+  packages/core-astro:
+    devDependencies:
+      tsup:
+        specifier: ^7.3.0
+        version: 7.3.0(postcss@8.5.4)(typescript@5.8.3)
 
   packages/core-react:
     dependencies:

@@ -1,5 +1,5 @@
 {
-  "name": "@astra/core-react",
+  "name": "@astrahub/core-react",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,6 +9,9 @@
   ],
   "scripts": {
     "build": "tsup"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "react": "^18.3.1",

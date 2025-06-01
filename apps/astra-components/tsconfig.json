@@ -7,8 +7,8 @@
       "@layout/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@astra/core-react/*": ["../../packages/core-react/src/*"],
-      "@astra/core-astro/*": ["../../packages/core-astro/src/*"]
+      "@astrahub/core-react/*": ["../../packages/core-react/src/*"],
+      "@astrahub/core-astro/*": ["../../packages/core-astro/src/*"]
     }
   },
   "include": ["src"]
