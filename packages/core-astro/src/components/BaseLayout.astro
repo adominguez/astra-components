@@ -1,0 +1,27 @@
+---
+const { author, sitemap, favicon, title, description, charset = 'utf-8', viewport = 'width=device-width,initial-scale=1'} = Astro.props;
+---
+
+<meta charset={charset} />
+<meta name="viewport" content={viewport} />
+{
+  favicon ? <link rel="icon" type="image/svg+xml" href={favicon} /> : null
+}
+<meta name="generator" content={Astro.generator} />
+{
+  author ? <meta name="author" content={author} /> : null
+}
+{
+  sitemap ? <link rel="sitemap" href={sitemap} /> : null
+}
+
+<!-- Primary Meta Tags -->
+{
+  title ? <title>{title}</title> : null
+}
+{
+  title ? <meta name="title" content={title} /> : null
+}
+{
+  title ? <meta name="description" content={description} /> : null
+}

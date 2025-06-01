@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["astro/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@layout/*": ["src/layouts/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@ds/core-react/*": ["../../packages/core-react/src/*"],
+      "@ds/core-astro/*": ["../../packages/core-astro/src/*"]
+    }
+  },
+  "include": ["src"]
+}

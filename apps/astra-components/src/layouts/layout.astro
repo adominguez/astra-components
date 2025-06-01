@@ -1,0 +1,15 @@
+---
+import BaseLayout from "@ds/core-astro/components/BaseLayout.astro"
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+    <BaseLayout title={title} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
