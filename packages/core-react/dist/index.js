@@ -38,32 +38,7 @@ module.exports = __toCommonJS(src_exports);
 // src/components/Button.tsx
 var React = __toESM(require("react"));
 var import_react_slot = require("@radix-ui/react-slot");
-
-// src/themes/astrahub.ts
-var astrahub = {
-  base: "rounded-2xl text-white font-medium transition",
-  variants: {
-    default: "bg-indigo-600 hover:bg-indigo-500",
-    secondary: "bg-gray-800 hover:bg-gray-700",
-    outline: "border border-white text-white hover:bg-white hover:text-black"
-  }
-};
-
-// src/themes/grotesk.ts
-var grotesk = {
-  base: "rounded-none font-bold uppercase tracking-wide",
-  variants: {
-    default: "bg-pink-600 text-black hover:bg-pink-500",
-    secondary: "bg-yellow-300 text-black hover:bg-yellow-200",
-    outline: "border-2 border-black text-black hover:bg-black hover:text-white"
-  }
-};
-
-// src/themes/index.ts
-var themes = {
-  astrahub,
-  grotesk
-};
+var import_themes = require("@astrahub/themes");
 
 // src/utils/cn.ts
 function cn(...classes) {
@@ -75,7 +50,7 @@ var import_jsx_runtime = require("react/jsx-runtime");
 var Button = React.forwardRef(
   ({ className, variant = "default", theme = "astrahub", asChild = false, ...props }, ref) => {
     const Comp = asChild ? import_react_slot.Slot : "button";
-    const selectedTheme = themes[theme];
+    const selectedTheme = import_themes.themes[theme];
     const styles = cn(
       selectedTheme.base,
       selectedTheme.variants[variant] ?? "",

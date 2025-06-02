@@ -49,10 +49,17 @@ importers:
         specifier: 3.4.1
         version: 3.4.1
 
-  packages/core-astro: {}
+  packages/core-astro:
+    dependencies:
+      '@astrahub/themes':
+        specifier: workspace:^
+        version: link:../themes
 
   packages/core-react:
     dependencies:
+      '@astrahub/themes':
+        specifier: workspace:^
+        version: link:../themes
       '@radix-ui/react-slot':
         specifier: ^1.2.3
         version: 1.2.3(@types/react@19.1.6)(react@18.3.1)
