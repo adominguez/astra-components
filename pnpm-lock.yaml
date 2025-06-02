@@ -22,7 +22,7 @@ importers:
         version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@astrahub/themes':
         specifier: ^0.1.0
-        version: 0.1.2
+        version: 0.1.3
       '@astrojs/react':
         specifier: ^4.3.0
         version: 4.3.0(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(jiti@1.21.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yaml@2.8.0)
@@ -53,13 +53,13 @@ importers:
     dependencies:
       '@astrahub/themes':
         specifier: ^0.1.0
-        version: 0.1.2
+        version: 0.1.3
 
   packages/core-react:
     dependencies:
       '@astrahub/themes':
         specifier: ^0.1.0
-        version: 0.1.2
+        version: 0.1.3
       '@radix-ui/react-navigation-menu':
         specifier: ^1.2.13
         version: 1.2.13(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -126,8 +126,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@astrahub/themes@0.1.2':
-    resolution: {integrity: sha512-w+Ce9Q4vzXVDfGJL4w19FtlYuu7ZL1V7gKERiPggM9d8jxAQ0jBsysBZce/Ahi5gyDYFa9egg0mShsNK5TaP7g==}
+  '@astrahub/themes@0.1.3':
+    resolution: {integrity: sha512-0BRENawiP6ijK1urv0mq51ZaUc3ztoa3xm4V2GxLGIdcxQAwQY9Z05nx8U1XEw8lLs++kveBXsNDIRyrTWXM/w==}
 
   '@astrojs/compiler@2.12.0':
     resolution: {integrity: sha512-7bCjW6tVDpUurQLeKBUN9tZ5kSv5qYrGmcn0sG0IwacL7isR2ZbyyA3AdZ4uxsuUFOS2SlgReTH7wkxO6zpqWA==}
@@ -1458,8 +1458,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.161:
-    resolution: {integrity: sha512-hwtetwfKNZo/UlwHIVBlKZVdy7o8bIZxxKs0Mv/ROPiQQQmDgdm5a+KvKtBsxM8ZjFzTaCeLoodZ8jiBE3o9rA==}
+  electron-to-chromium@1.5.162:
+    resolution: {integrity: sha512-hQA+Zb5QQwoSaXJWEAGEw1zhk//O7qDzib05Z4qTqZfNju/FAkrm5ZInp0JbTp4Z18A6bilopdZWEYrFSsfllA==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -2739,7 +2739,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@astrahub/themes@0.1.2': {}
+  '@astrahub/themes@0.1.3': {}
 
   '@astrojs/compiler@2.12.0': {}
 
@@ -3768,7 +3768,7 @@ snapshots:
   browserslist@4.25.0:
     dependencies:
       caniuse-lite: 1.0.30001720
-      electron-to-chromium: 1.5.161
+      electron-to-chromium: 1.5.162
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.0)
 
@@ -3900,7 +3900,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.161: {}
+  electron-to-chromium@1.5.162: {}
 
   emoji-regex-xs@1.0.0: {}
 
