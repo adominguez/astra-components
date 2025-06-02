@@ -11,6 +11,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@astrahub/themes": "workspace:^"
+    "@astrahub/themes": "^0.1.0"
   }
 }

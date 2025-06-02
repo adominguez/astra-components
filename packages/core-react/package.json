@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
-    "@astrahub/themes": "workspace:^"
+    "@astrahub/themes": "^0.1.0"
   }
 }
