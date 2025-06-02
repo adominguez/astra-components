@@ -1,4 +1,8 @@
-# 🪐 Design System Monorepo (Astro + React + Tailwind + Turborepo)
+# 🌌 Astra Components
+
+Este repositorio contiene el **Design System oficial de AstraHub**, estructurado como un monorepo gestionado con Turborepo y `pnpm`. Incluye paquetes reutilizables tanto para proyectos **React** como **Astro**.
+
+---
 
 Este repositorio contiene una base para crear un sistema de diseño moderno y reutilizable usando:
 
@@ -50,10 +54,10 @@ pnpm run dev
 ## 📁 Estructura del monorepo
 
 ```psgl
-design-system/
+astra-components/
 ├── packages/
 │   ├── core-react/       → Componentes en React (con Tailwind)
-│   ├── core-astro/       → Wrappers para Astro que usan los React
+│   ├── core-astro/       → Componentes de Astro (con Tailwind)
 │   └── tailwind-config/  → Configuración global de Tailwind
 ├── apps/
 │   └── astra-components/       → Sitio Astro de prueba y demo
@@ -72,27 +76,25 @@ export function Button({ variant, ...props }) {
 }
 ```
 
-✅ Wrapper Astro (core-astro)
+✅ Componente de Astro (core-astro)
 
 ```astro
 ---
-import { Button } from '@astrahub/core-react/components/Button';
+import { Button } from '@astrahub/core-astro';
+import { Button as ButtonReact } from '@astrahub/core-react/components/Button';
 ---
-<Button client:only="react">Botón desde React</Button>
+<Button>Botón de Astro</Button>
+<ButtonReact>Botón de React</ButtonReact>
 ```
-📌 Usa client:only="react" para renderizarlo en Astro sin error.
+📌 Usa client:only="react" para componentes dinámicos.
 
 
-✅ Próximos pasos sugeridos
-Añadir más componentes (Input, Modal, Card, etc.)
+## ▶️ Desarrollo
 
-Integrar Storybook para documentación visual
+```bash
+pnpm --filter astro-docs dev
+```
 
-Añadir README.md por paquete
-
-Publicar core-react como paquete NPM (npm publish)
-
-Usar Starlight o Astro para documentación final
 
 🤝 Créditos
 Desarrollado por Astrahub

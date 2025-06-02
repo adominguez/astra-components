@@ -3,7 +3,9 @@
   "name": "design-system",
   "workspaces": ["packages/*", "apps/*"],
   "scripts": {
-    "publish": "node scripts/publish.js"
+    "dev": "pnpm --filter astra-components dev",
+    "publish": "node scripts/publish.js",
+    "update:deps": "node scripts/update-deps.js"
   },
   "devDependencies": {
     "turbo": "latest"
