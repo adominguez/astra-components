@@ -2,6 +2,9 @@
   "private": true,
   "name": "design-system",
   "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "publish": "node scripts/publish.js"
+  },
   "devDependencies": {
     "turbo": "latest"
   }

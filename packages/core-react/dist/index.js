@@ -20,7 +20,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
-  Button: () => Button
+  Button: () => Button,
+  Input: () => Input
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -45,7 +46,20 @@ function Button({ variant = "default", className, ...props }) {
     }
   );
 }
+
+// src/components/Input.tsx
+var import_jsx_runtime2 = require("react/jsx-runtime");
+function Input({ className, variant = "default", ...props }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+    "input",
+    {
+      className: `px-4 py-2 rounded border ${variant === "ghost" ? "border-transparent bg-transparent" : "border-gray-300"} ${className ?? ""}`,
+      ...props
+    }
+  );
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  Button
+  Button,
+  Input
 });

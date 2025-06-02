@@ -19,6 +19,19 @@ function Button({ variant = "default", className, ...props }) {
     }
   );
 }
+
+// src/components/Input.tsx
+import { jsx as jsx2 } from "react/jsx-runtime";
+function Input({ className, variant = "default", ...props }) {
+  return /* @__PURE__ */ jsx2(
+    "input",
+    {
+      className: `px-4 py-2 rounded border ${variant === "ghost" ? "border-transparent bg-transparent" : "border-gray-300"} ${className ?? ""}`,
+      ...props
+    }
+  );
+}
 export {
-  Button
+  Button,
+  Input
 };
