@@ -5,6 +5,7 @@
   "files": [
     "src"
   ],
+  "sideEffects": false,
   "type": "module",
   "publishConfig": {
     "access": "public"
