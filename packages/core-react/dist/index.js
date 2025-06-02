@@ -48,7 +48,13 @@ function cn(...classes) {
 // src/components/Button.tsx
 var import_jsx_runtime = require("react/jsx-runtime");
 var Button = React.forwardRef(
-  ({ className, variant = "default", theme = "astrahub", asChild = false, ...props }, ref) => {
+  ({
+    className,
+    variant = "default",
+    theme = "astrahub",
+    asChild = false,
+    ...props
+  }, ref) => {
     const Comp = asChild ? import_react_slot.Slot : "button";
     const selectedTheme = import_themes.themes[theme];
     const styles = cn(

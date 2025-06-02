@@ -11,7 +11,13 @@ function cn(...classes) {
 // src/components/Button.tsx
 import { jsx } from "react/jsx-runtime";
 var Button = React.forwardRef(
-  ({ className, variant = "default", theme = "astrahub", asChild = false, ...props }, ref) => {
+  ({
+    className,
+    variant = "default",
+    theme = "astrahub",
+    asChild = false,
+    ...props
+  }, ref) => {
     const Comp = asChild ? Slot : "button";
     const selectedTheme = themes[theme];
     const styles = cn(
