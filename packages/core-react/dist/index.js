@@ -32,7 +32,16 @@ var src_exports = {};
 __export(src_exports, {
   Button: () => Button,
   Input: () => Input,
-  buttonVariants: () => buttonVariants
+  NavigationMenu: () => NavigationMenu,
+  NavigationMenuContent: () => NavigationMenuContent,
+  NavigationMenuIndicator: () => NavigationMenuIndicator,
+  NavigationMenuItem: () => NavigationMenuItem,
+  NavigationMenuLink: () => NavigationMenuLink,
+  NavigationMenuList: () => NavigationMenuList,
+  NavigationMenuTrigger: () => NavigationMenuTrigger,
+  NavigationMenuViewport: () => NavigationMenuViewport,
+  buttonVariants: () => buttonVariants,
+  navigationMenuTriggerStyle: () => navigationMenuTriggerStyle
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -100,9 +109,180 @@ function Input({ className, variant = "default", ...props }) {
     }
   );
 }
+
+// src/components/navigation-menu.tsx
+var NavigationMenuPrimitive = __toESM(require("@radix-ui/react-navigation-menu"));
+var import_class_variance_authority2 = require("class-variance-authority");
+var import_lucide_react = require("lucide-react");
+var import_themes2 = require("@astrahub/themes");
+var import_jsx_runtime3 = require("react/jsx-runtime");
+function NavigationMenu({
+  className,
+  children,
+  viewport = true,
+  theme = "astrahub",
+  ...props
+}) {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+    NavigationMenuPrimitive.Root,
+    {
+      "data-slot": "navigation-menu",
+      "data-viewport": viewport,
+      className: cn(
+        "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
+        className
+      ),
+      ...props,
+      children: [
+        children,
+        viewport && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(NavigationMenuViewport, { theme })
+      ]
+    }
+  );
+}
+function NavigationMenuList({
+  className,
+  ...props
+}) {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    NavigationMenuPrimitive.List,
+    {
+      "data-slot": "navigation-menu-list",
+      className: cn(
+        "group flex flex-1 list-none items-center justify-center gap-1",
+        className
+      ),
+      ...props
+    }
+  );
+}
+function NavigationMenuItem({
+  className,
+  ...props
+}) {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    NavigationMenuPrimitive.Item,
+    {
+      "data-slot": "navigation-menu-item",
+      className: cn("relative", className),
+      ...props
+    }
+  );
+}
+var navigationMenuTriggerStyle = (0, import_class_variance_authority2.cva)(
+  "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1"
+);
+function NavigationMenuTrigger({
+  className,
+  children,
+  variant = "default",
+  theme = "astrahub",
+  ...props
+}) {
+  const triggerClass = import_themes2.themes?.[theme]?.navigationMenu?.trigger?.[variant] ?? "";
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+    NavigationMenuPrimitive.Trigger,
+    {
+      "data-slot": "navigation-menu-trigger",
+      className: cn(triggerClass, "group", className),
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          import_lucide_react.ChevronDownIcon,
+          {
+            className: "relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180",
+            "aria-hidden": "true"
+          }
+        )
+      ]
+    }
+  );
+}
+function NavigationMenuContent({
+  className,
+  theme = "astrahub",
+  ...props
+}) {
+  const contentClass = import_themes2.themes?.[theme]?.navigationMenu?.content ?? "";
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    NavigationMenuPrimitive.Content,
+    {
+      "data-slot": "navigation-menu-content",
+      className: cn(contentClass, className),
+      ...props
+    }
+  );
+}
+function NavigationMenuViewport({
+  className,
+  ...props
+}) {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    "div",
+    {
+      className: cn(
+        "absolute top-full left-0 isolate z-50 flex justify-center"
+      ),
+      children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        NavigationMenuPrimitive.Viewport,
+        {
+          "data-slot": "navigation-menu-viewport",
+          className: cn(
+            "origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border shadow md:w-[var(--radix-navigation-menu-viewport-width)]",
+            className
+          ),
+          ...props
+        }
+      )
+    }
+  );
+}
+function NavigationMenuLink({
+  className,
+  theme = "astrahub",
+  variant = "default",
+  ...props
+}) {
+  const linkClass = import_themes2.themes?.[theme]?.navigationMenu?.link?.[variant] ?? "";
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    NavigationMenuPrimitive.Link,
+    {
+      "data-slot": "navigation-menu-link",
+      className: cn(linkClass, className),
+      ...props
+    }
+  );
+}
+function NavigationMenuIndicator({
+  className,
+  ...props
+}) {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    NavigationMenuPrimitive.Indicator,
+    {
+      "data-slot": "navigation-menu-indicator",
+      className: cn(
+        "data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden",
+        className
+      ),
+      ...props,
+      children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" })
+    }
+  );
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Button,
   Input,
-  buttonVariants
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  buttonVariants,
+  navigationMenuTriggerStyle
 });
