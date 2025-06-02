@@ -18,11 +18,11 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       '@astrahub/core-react':
-        specifier: workspace:^
-        version: link:../../packages/core-react
+        specifier: ^0.1.0
+        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@astrahub/themes':
-        specifier: workspace:^
-        version: link:../../packages/themes
+        specifier: ^0.1.0
+        version: 0.1.0
       '@astrojs/react':
         specifier: ^4.3.0
         version: 4.3.0(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(jiti@1.21.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yaml@2.8.0)
@@ -52,14 +52,14 @@ importers:
   packages/core-astro:
     dependencies:
       '@astrahub/themes':
-        specifier: workspace:^
-        version: link:../themes
+        specifier: ^0.1.0
+        version: 0.1.0
 
   packages/core-react:
     dependencies:
       '@astrahub/themes':
-        specifier: workspace:^
-        version: link:../themes
+        specifier: ^0.1.0
+        version: 0.1.0
       '@radix-ui/react-slot':
         specifier: ^1.2.3
         version: 1.2.3(@types/react@19.1.6)(react@18.3.1)
@@ -83,11 +83,7 @@ importers:
         specifier: ^5.0.0
         version: 5.8.3
 
-  packages/themes:
-    devDependencies:
-      tsup:
-        specifier: ^7.2.0
-        version: 7.3.0(postcss@8.5.4)(typescript@5.8.3)
+  packages/themes: {}
 
 packages:
 
@@ -101,6 +97,15 @@ packages:
 
   '@astrahub/core-astro@0.1.0':
     resolution: {integrity: sha512-Pe1kvybQKcSaX8YsXAqa087aJmkMFa1vp1kHax3Ez9BB4xnJPssWuz1xuAJCxwN03Bmjnn9GMM8kymSXsY2v0Q==}
+
+  '@astrahub/core-react@0.1.0':
+    resolution: {integrity: sha512-hx4QdXsPxLaCdfH444H3w9a1XECn8iJGAQGIN0fo6zJSYAvNjiss5H/3DLIVopGF0+IR0YI+hdu/e7axqTmPdA==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@astrahub/themes@0.1.0':
+    resolution: {integrity: sha512-wvCKv+/khnrL0nLV1VamvY0KDAHwg2y4Fsf6DzgxoDWEMtXfvBgjjrPTTaLYVJkTbm7LJH4b948MPDynWXmRow==}
 
   '@astrojs/compiler@2.12.0':
     resolution: {integrity: sha512-7bCjW6tVDpUurQLeKBUN9tZ5kSv5qYrGmcn0sG0IwacL7isR2ZbyyA3AdZ4uxsuUFOS2SlgReTH7wkxO6zpqWA==}
@@ -2530,6 +2535,13 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.25
 
   '@astrahub/core-astro@0.1.0': {}
+
+  '@astrahub/core-react@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@astrahub/themes@0.1.0': {}
 
   '@astrojs/compiler@2.12.0': {}
 
