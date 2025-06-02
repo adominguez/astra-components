@@ -3,16 +3,23 @@ import { Slot } from "@radix-ui/react-slot"
 import { themes, ThemeName } from "@astrahub/themes"
 import { cn } from "../utils/cn"
 
-type Variant = keyof (typeof themes)[ThemeName]["variants"]
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  theme?: ThemeName
-  variant?: Variant
+type ButtonProps<T extends ThemeName = "astrahub"> = {
+  theme?: T
+  variant?: keyof typeof themes[T]["variants"]
   asChild?: boolean
-}
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "default", theme = "astrahub", asChild = false, ...props }, ref) => {
+const Button = React.forwardRef(
+  <T extends ThemeName = "astrahub">(
+    {
+      className,
+      variant = "default",
+      theme = "astrahub" as T,
+      asChild = false,
+      ...props
+    }: ButtonProps<T>,
+    ref: React.Ref<HTMLButtonElement>
+  ) => {
     const Comp = asChild ? Slot : "button"
     const selectedTheme = themes[theme]
     const styles = cn(
@@ -26,4 +33,5 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 
 Button.displayName = "Button"
+
 export { Button }
