@@ -1,11 +1,14 @@
 ---
 import AstroButton from '@astrahub/core-astro/components/Button.astro';
-import { Button as ButtonReact } from '@astrahub/core-react/components/Button';
+import { Button as ButtonReact } from '@astrahub/core-react';
 import Layout from '@layout/layout.astro';
 ---
 
 <Layout title="Página de inicio">
-  <h1 class="text-2xl font-bold mb-4">Esta es la demo del botón</h1>
-  <AstroButton />
-  <ButtonReact>Botón de React</ButtonReact>
+  <div class="space-y-4">
+    <ButtonReact>Botón por defecto (Astrahub)</ButtonReact>
+    <ButtonReact theme="grotesk">Grotesk default</ButtonReact>
+    <ButtonReact theme="grotesk" variant="outline">Grotesk outline</ButtonReact>
+    <ButtonReact theme="astrahub" variant="secondary">Astrahub secondary</ButtonReact>
+  </div>
 </Layout>

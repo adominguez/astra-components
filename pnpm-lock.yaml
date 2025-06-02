@@ -18,8 +18,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       '@astrahub/core-react':
-        specifier: ^0.1.0
-        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: workspace:^
+        version: link:../../packages/core-react
       '@astrojs/react':
         specifier: ^4.3.0
         version: 4.3.0(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(jiti@1.21.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yaml@2.8.0)
@@ -50,6 +50,9 @@ importers:
 
   packages/core-react:
     dependencies:
+      '@radix-ui/react-slot':
+        specifier: ^1.2.3
+        version: 1.2.3(@types/react@19.1.6)(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -82,12 +85,6 @@ packages:
 
   '@astrahub/core-astro@0.1.0':
     resolution: {integrity: sha512-Pe1kvybQKcSaX8YsXAqa087aJmkMFa1vp1kHax3Ez9BB4xnJPssWuz1xuAJCxwN03Bmjnn9GMM8kymSXsY2v0Q==}
-
-  '@astrahub/core-react@0.1.0':
-    resolution: {integrity: sha512-hx4QdXsPxLaCdfH444H3w9a1XECn8iJGAQGIN0fo6zJSYAvNjiss5H/3DLIVopGF0+IR0YI+hdu/e7axqTmPdA==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
 
   '@astrojs/compiler@2.12.0':
     resolution: {integrity: sha512-7bCjW6tVDpUurQLeKBUN9tZ5kSv5qYrGmcn0sG0IwacL7isR2ZbyyA3AdZ4uxsuUFOS2SlgReTH7wkxO6zpqWA==}
@@ -793,6 +790,24 @@ packages:
 
   '@proload/core@0.3.3':
     resolution: {integrity: sha512-7dAFWsIK84C90AMl24+N/ProHKm4iw0akcnoKjRvbfHifJZBLhaDsDus1QJmhG12lXj4e/uB/8mB/0aduCW+NQ==}
+
+  '@radix-ui/react-compose-refs@1.1.2':
+    resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-slot@1.2.3':
+    resolution: {integrity: sha512-aeNmHnBxbi2St0au6VBVC7JXFlhLlOnvIIlePNniyUNAClzmtAUEY8/pBiK3iHjufOlwA+c20/8jngo7xcrg8A==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@rolldown/pluginutils@1.0.0-beta.9':
     resolution: {integrity: sha512-e9MeMtVWo186sgvFFJOPGy7/d2j2mZhLJIdVW0C/xDluuOvymEATqz6zKsP0ZmXGzQtqlyjz5sC1sYQUoJG98w==}
@@ -2500,11 +2515,6 @@ snapshots:
 
   '@astrahub/core-astro@0.1.0': {}
 
-  '@astrahub/core-react@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   '@astrojs/compiler@2.12.0': {}
 
   '@astrojs/internal-helpers@0.4.1': {}
@@ -3052,6 +3062,19 @@ snapshots:
     dependencies:
       deepmerge: 4.3.1
       escalade: 3.2.0
+
+  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.6)(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 19.1.6
+
+  '@radix-ui/react-slot@1.2.3(@types/react@19.1.6)(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.6)(react@18.3.1)
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 19.1.6
 
   '@rolldown/pluginutils@1.0.0-beta.9': {}
 

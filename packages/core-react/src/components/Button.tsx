@@ -1,20 +1,29 @@
-import { cn } from "../utils/cn";
-import { ButtonHTMLAttributes } from "react";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { themes, ThemeName } from "../themes"
+import { cn } from "../utils/cn"
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline";
+type Variant = keyof (typeof themes)[ThemeName]["variants"]
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  theme?: ThemeName
+  variant?: Variant
+  asChild?: boolean
 }
 
-export function Button({ variant = "default", className, ...props }: ButtonProps) {
-  return (
-    <button
-      className={cn(
-        "px-4 py-2 rounded font-semibold",
-        variant === "default" && "bg-black text-white",
-        variant === "outline" && "border border-black text-black",
-        className
-      )}
-      {...props}
-    />
-  );
-}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = "default", theme = "astrahub", asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    const selectedTheme = themes[theme]
+    const styles = cn(
+      selectedTheme.base,
+      selectedTheme.variants[variant] ?? "",
+      className
+    )
+
+    return <Comp ref={ref} className={styles} {...props} />
+  }
+)
+
+Button.displayName = "Button"
+export { Button }

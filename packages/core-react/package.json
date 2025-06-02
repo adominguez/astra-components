@@ -23,5 +23,8 @@
     "@types/react-dom": "^19.1.5",
     "tsup": "^7.2.0",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3"
   }
 }
