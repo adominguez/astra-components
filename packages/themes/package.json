@@ -1,6 +1,12 @@
 {
   "name": "@astrahub/themes",
   "version": "0.1.0",
-  "main": "./src/themes.ts",
-  "type": "module"
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "type": "module",
+  "scripts": {
+    "build": "tsup"
+  }
 }

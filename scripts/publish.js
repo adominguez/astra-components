@@ -11,7 +11,7 @@ const scope = `@astrahub/${packageName}`;
 const path = `packages/${packageName}`;
 
 try {
-  if (packageName === 'core-react') {
+  if (packageName === 'core-react' || packageName === 'themes') {
     console.log(`📦 Compilando ${scope}...`);
     execSync(`pnpm --filter ${scope} build`, { stdio: 'inherit' });
   }
