@@ -6,6 +6,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrahub/core-astro": "^0.1.0",
+    "@astrahub/core-react": "^0.1.0",
     "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^3.1.0",
     "astro": "^4.0.0",

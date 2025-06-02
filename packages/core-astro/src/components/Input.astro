@@ -1,0 +1,7 @@
+---
+const { type = 'text' } = Astro.props
+---
+
+<input type={type} class:list={[
+  Astro.props.class
+]} />
