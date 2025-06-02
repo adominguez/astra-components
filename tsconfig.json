@@ -6,7 +6,8 @@
     "baseUrl": ".",
     "paths": {
       "@astrahub/core-react/*": ["packages/core-react/src/*"],
-      "@astrahub/core-astro/*": ["packages/core-astro/src/*"]
+      "@astrahub/core-astro/*": ["packages/core-astro/src/*"],
+      "@astrahub/themes/*": ["packages/themes/src/*"]
     },
     "jsx": "react-jsx",
     "strict": true,

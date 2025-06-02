@@ -1,1 +1,26 @@
-<button>Hola, esto es un componente de Astro</button>
+---
+import type { ButtonHTMLAttributes } from 'astro/types';
+import { themes } from '../themes/themes';
+
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'default' | 'ghost';
+  theme?: keyof typeof themes;
+  class?: string;
+}
+
+const {
+  variant = 'default',
+  theme = 'astrahub',
+  class: customClass,
+  ...rest
+} = Astro.props;
+
+const themeConfig = themes[theme];
+const base = themeConfig.base;
+const variantStyles = themeConfig.variants[variant];
+const classes = [base, variantStyles, customClass].filter(Boolean).join(' ');
+---
+
+<button class={classes} {...rest}>
+  <slot />
+</button>

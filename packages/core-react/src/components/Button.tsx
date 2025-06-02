@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
-import { themes, ThemeName } from "../themes"
+import { themes, ThemeName } from "@astrahub/themes"
 import { cn } from "../utils/cn"
 
 type Variant = keyof (typeof themes)[ThemeName]["variants"]

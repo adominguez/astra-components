@@ -1,6 +1,6 @@
 const { execSync } = require('child_process')
 
-const packages = ['@astrahub/core-react', '@astrahub/core-astro']
+const packages = ['@astrahub/core-react', '@astrahub/core-astro', '@astrahub/themes']
 const targetApp = 'astro-docs'
 
 console.log(`🔄 Actualizando paquetes en ${targetApp}...\n`)

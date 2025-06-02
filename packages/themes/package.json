@@ -1,0 +1,6 @@
+{
+  "name": "@astrahub/themes",
+  "version": "0.1.0",
+  "main": "./src/themes.ts",
+  "type": "module"
+}
