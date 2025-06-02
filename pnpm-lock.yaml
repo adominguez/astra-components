@@ -83,7 +83,11 @@ importers:
         specifier: ^5.0.0
         version: 5.8.3
 
-  packages/themes: {}
+  packages/themes:
+    devDependencies:
+      tsup:
+        specifier: ^7.2.0
+        version: 7.3.0(postcss@8.5.4)(typescript@5.8.3)
 
 packages:
 

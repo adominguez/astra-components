@@ -10,5 +10,8 @@
   "type": "module",
   "scripts": {
     "build": "tsup"
+  },
+  "devDependencies": {
+    "tsup": "^7.2.0"
   }
 }
