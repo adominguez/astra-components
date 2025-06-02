@@ -7,7 +7,8 @@
     "dev": "pnpm --filter astra-components dev",
     "publish": "node scripts/publish.js",
     "release": "node scripts/release.js",
-    "update:deps": "node scripts/update-deps.js"
+    "update:deps": "node scripts/update-deps.js",
+    "clean:install": "node scripts/clean-install.js"
   },
   "devDependencies": {
     "turbo": "latest"
