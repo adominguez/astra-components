@@ -39,7 +39,7 @@ pnpm install
 Opción 1: desde la raíz del monorepo
 
 ```bash
-pnpm --filter astra-components dev
+pnpm --filter app-astra-components dev
 ````
 
 Opción 2: desde dentro de astra-components

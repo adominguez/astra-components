@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "workspaces": ["packages/*", "apps/*"],
   "scripts": {
-    "dev": "pnpm --filter astra-components dev",
+    "dev": "pnpm --filter app-astra-components dev",
     "publish": "node scripts/publish.js",
     "release": "node scripts/release.js",
     "update:deps": "node scripts/update-deps.js",

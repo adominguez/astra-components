@@ -21,10 +21,10 @@ try {
   execSync(`pnpm --filter ${fullPackageName} publish --access public`, { stdio: 'inherit' })
 
   console.log(`🔄 Actualizando dependencias en astra-components...\n`)
-  execSync(`pnpm add ${fullPackageName}@latest --workspace --filter astra-components`, { stdio: 'inherit' })
+  execSync(`pnpm add ${fullPackageName}@latest --workspace --filter app-astra-components`, { stdio: 'inherit' })
 
   console.log(`🚀 Lanzando entorno de desarrollo de astra-components...\n`)
-  execSync(`pnpm --filter astra-components dev`, { stdio: 'inherit' })
+  execSync(`pnpm --filter app-astra-components dev`, { stdio: 'inherit' })
 
 } catch (err) {
   console.error(`❌ Error durante el proceso: ${err.message}`)
