@@ -2,7 +2,7 @@ const { execSync } = require('child_process')
 
 const [pkg, versionType = 'patch'] = process.argv.slice(2)
 
-if (!pkg || !['core-react', 'core-astro'].includes(pkg)) {
+if (!pkg || !['core-react', 'core-astro', 'themes'].includes(pkg)) {
   console.error('❌ Especifica un paquete válido: core-react o core-astro')
   process.exit(1)
 }
