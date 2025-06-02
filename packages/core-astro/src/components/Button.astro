@@ -1,26 +1,31 @@
 ---
-import type { ButtonHTMLAttributes } from 'astro/types';
-import { themes } from '@astrahub/themes';
+import { themes, type ThemeName } from "@astrahub/themes"
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'ghost';
-  theme?: keyof typeof themes;
-  class?: string;
+export interface Props {
+  theme?: ThemeName
+  variant?: string
+  size?: string
+  className?: string
+  as?: string
+  disabled?: boolean
 }
 
 const {
-  variant = 'default',
-  theme = 'astrahub',
-  class: customClass,
-  ...rest
-} = Astro.props;
+  theme = "astrahub",
+  variant = "default",
+  size = "default",
+  className = "",
+  as = "button",
+  disabled = false
+} = Astro.props
 
-const themeConfig = themes[theme];
-const base = themeConfig.base;
-const variantStyles = themeConfig.variants[variant];
-const classes = [base, variantStyles, customClass].filter(Boolean).join(' ');
+const selectedTheme = themes[theme]
+const base = selectedTheme?.base ?? ""
+const variantClass = selectedTheme?.variants?.[variant] ?? ""
+const finalClass = [base, variantClass, className].join(" ").trim()
+const tag = as
 ---
 
-<button class={classes} {...rest}>
+<component this={tag} class={finalClass} disabled={disabled}>
   <slot />
-</button>
+</component>
