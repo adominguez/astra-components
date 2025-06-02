@@ -1,6 +1,7 @@
 {
   "private": true,
-  "name": "design-system",
+  "name": "astra-components",
+  "version": "0.1.0",
   "workspaces": ["packages/*", "apps/*"],
   "scripts": {
     "dev": "pnpm --filter astra-components dev",
