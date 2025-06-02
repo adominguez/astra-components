@@ -21,8 +21,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@astrahub/themes':
-        specifier: ^0.1.0
-        version: 0.1.2
+        specifier: workspace:^
+        version: link:../../packages/themes
       '@astrojs/react':
         specifier: ^4.3.0
         version: 4.3.0(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(jiti@1.21.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yaml@2.8.0)

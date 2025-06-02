@@ -31,38 +31,60 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   Button: () => Button,
-  Input: () => Input
+  Input: () => Input,
+  buttonVariants: () => buttonVariants
 });
 module.exports = __toCommonJS(src_exports);
 
 // src/components/Button.tsx
 var React = __toESM(require("react"));
 var import_react_slot = require("@radix-ui/react-slot");
-var import_themes = require("@astrahub/themes");
+var import_class_variance_authority = require("class-variance-authority");
 
 // src/utils/cn.ts
-function cn(...classes) {
-  return classes.filter(Boolean).join(" ");
+var import_clsx = require("clsx");
+var import_tailwind_merge = require("tailwind-merge");
+function cn(...inputs) {
+  return (0, import_tailwind_merge.twMerge)((0, import_clsx.clsx)(inputs));
 }
 
 // src/components/Button.tsx
+var import_themes = require("@astrahub/themes");
 var import_jsx_runtime = require("react/jsx-runtime");
+var buttonVariants = (0, import_class_variance_authority.cva)(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        destructive: "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline: "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "text-primary underline-offset-4 hover:underline"
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default"
+    }
+  }
+);
 var Button = React.forwardRef(
-  ({
-    className,
-    variant = "default",
-    theme = "astrahub",
-    asChild = false,
-    ...props
-  }, ref) => {
+  ({ className, variant = "default", size = "default", asChild = false, theme, ...props }, ref) => {
     const Comp = asChild ? import_react_slot.Slot : "button";
-    const selectedTheme = import_themes.themes[theme];
-    const styles = cn(
-      selectedTheme.base,
-      selectedTheme.variants[variant] ?? "",
+    const themed = theme && import_themes.themes[theme] ? cn(
+      import_themes.themes[theme].base,
+      import_themes.themes[theme].variants?.[variant || "default"] ?? "",
       className
-    );
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Comp, { ref, className: styles, ...props });
+    ) : cn(buttonVariants({ variant, size, className }));
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Comp, { ref, className: themed, ...props });
   }
 );
 Button.displayName = "Button";
@@ -81,5 +103,6 @@ function Input({ className, variant = "default", ...props }) {
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Button,
-  Input
+  Input,
+  buttonVariants
 });
