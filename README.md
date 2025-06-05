@@ -98,5 +98,14 @@ pnpm --filter app-astra-components dev
 ```
 
 
+## 🧪 Tests
+
+Para ejecutar las pruebas del paquete `core-react`:
+
+```bash
+pnpm --filter @astrahub/core-react test
+```
+
+
 🤝 Créditos
 Desarrollado por Astrahub
