@@ -27,20 +27,20 @@ Este repositorio contiene una base para crear un sistema de diseño moderno y re
 ```bash
 git clone https://tu-repo.git
 cd design-system
-````
+```
 
 2. Instala las dependencias:
 
 ```bash
 pnpm install
-````
+```
 
 ## 🚀 Ejecutar el proyecto Astro de demo
 Opción 1: desde la raíz del monorepo
 
 ```bash
 pnpm --filter app-astra-components dev
-````
+```
 
 Opción 2: desde dentro de astra-components
 
@@ -53,7 +53,7 @@ pnpm run dev
 
 ## 📁 Estructura del monorepo
 
-```psgl
+````
 astra-components/
 ├── packages/
 │   ├── core-react/       → Componentes en React (con Tailwind)
@@ -63,7 +63,7 @@ astra-components/
 │   └── astra-components/       → Sitio Astro de prueba y demo
 ├── turbo.json            → Config de Turborepo
 ├── pnpm-workspace.yaml   → Config de workspaces para pnpm
-```
+````
 
 ## 🔍 Detalles técnicos
 
