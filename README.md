@@ -91,8 +91,10 @@ import { Button as ButtonReact } from '@astrahub/core-react/components/Button';
 
 ## ▶️ Desarrollo
 
+Ejecuta el sitio de demo ubicado en `apps/astra-components`:
+
 ```bash
-pnpm --filter astro-docs dev
+pnpm --filter app-astra-components dev
 ```
 
 
